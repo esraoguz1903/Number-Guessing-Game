@@ -10,7 +10,7 @@ public class RandomNumberGenerator {
             Random random = new Random();
            
             int randomNumber = random.nextInt(max - min + 1) + min;
-            System.out.println("Random number is created : " + randomNumber);
+            //System.out.println("Random number is created : " + randomNumber);
             
         return randomNumber;
     }

@@ -1,14 +1,13 @@
 package numberguessinggame;
 
-import static numberguessinggame.RandomNumberGenerator.generate;
 
 public class NumberGuessGame {
     GameConfig config;
     int secretNumber;
     
-    public NumberGuessGame(GameConfig config) {
+    public NumberGuessGame(GameConfig config, int secretNumber) {
         this.config = config;
-        this.secretNumber = generate(config.min, config.max);
+        this.secretNumber = secretNumber;
     }
 
     
@@ -16,7 +15,7 @@ public class NumberGuessGame {
     Attempt.guessResult evaluateGuess(int guess){
        //Attempt.guessResult result;
         if(guess > secretNumber){
-            return Attempt.guessResult.HİGH;
+            return Attempt.guessResult.HIGH;
         }
         else if(guess < secretNumber){
             return Attempt.guessResult.LOW;

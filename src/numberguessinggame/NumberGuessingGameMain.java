@@ -25,7 +25,7 @@ public class NumberGuessingGameMain {
         //GameConfig sınıfındaki maksimum deneme hakkının tutulduğu fonksiyon çağrıldı
         gameConfig.maxAttempts();
         
-        NumberGuessGame numberGuessGame = new NumberGuessGame(gameConfig);
+        NumberGuessGame numberGuessGame = new NumberGuessGame(gameConfig, randomNumber);
             
         
         int attemptResult = numberGuessGame.remainingAttempt();
@@ -36,7 +36,6 @@ public class NumberGuessingGameMain {
                 
                 System.out.println("Tahmininizi girin: ");
                 int guess = sc.nextInt();
-                
                 
                 Attempt.guessResult guessresult= numberGuessGame.evaluateGuess(guess);
                 System.out.println(guessresult);
@@ -64,6 +63,7 @@ public class NumberGuessingGameMain {
                 }
                 
                 } catch (InputMismatchException e) {
+                  
                     System.out.println("Sayı dışında bir değer girdiniz... Lütfen sayı giriniz!");
                     sc.next();
                 }
