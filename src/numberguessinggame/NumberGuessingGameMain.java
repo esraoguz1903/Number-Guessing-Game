@@ -7,15 +7,19 @@ import java.util.Scanner;
 public class NumberGuessingGameMain {
 
     public static void main(String[] args) {
-        //GameConfig nesnesi oluşturuldu.
+        
+//GameConfig nesnesi oluşturuldu.
         GameConfig gameConfig = new GameConfig();
         
         //GameConfig sınıfındaki aralık seçme fonksiyonu çağrıldı
         System.out.println("Range (1)1-100, (2)1-1000");
         Scanner sc = new Scanner(System.in);
         int range = sc.nextInt();
+        
+        //Seçtiğim aralığa uygun random sayıyı randomNumber değişkenine eşitliyorum.
         int randomNumber = gameConfig.range(range);
         
+        //Eğer seçtiğim aralık 1 ve 2 sayılarının dışındaysa tekrar seçtiriyorum.
         while(randomNumber == 0){
             System.out.println("Range (1)1-100, (2)1-1000");
             range = sc.nextInt();
@@ -25,6 +29,7 @@ public class NumberGuessingGameMain {
         //GameConfig sınıfındaki maksimum deneme hakkının tutulduğu fonksiyon çağrıldı
         gameConfig.maxAttempts();
         
+        //NumberGuessGame nesnesi oluşturuldu ve alt tarafta bu sınıfa ait remainingAttempt metodu çağrıldı.
         NumberGuessGame numberGuessGame = new NumberGuessGame(gameConfig, randomNumber);
             
         

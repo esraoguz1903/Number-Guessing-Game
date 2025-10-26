@@ -11,7 +11,7 @@ public class NumberGuessGame {
     }
 
     
-    
+    //Kullanıcının tahmin girişi ile oluşturulan random sayının karşılaştırılmasının yapıldığı method
     Attempt.guessResult evaluateGuess(int guess){
        //Attempt.guessResult result;
         if(guess > secretNumber){
@@ -27,6 +27,7 @@ public class NumberGuessGame {
         
     }
     
+    //Kullanıcının kalan hakkını kontrol eden method.
     int remainingAttempt(){
         return config.maxAttempts;
     }

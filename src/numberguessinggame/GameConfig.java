@@ -10,6 +10,9 @@ public class GameConfig {
     int maxAttempts;
     
     Scanner sc = new Scanner(System.in);
+    
+    //Kullanıcının 1-100 ya da 1-1000 aralığında yapacağı seçimi seçtiren method. Yaptığı seçime göre de NumberRandomGenerator
+    //sınıfından o aralığa uygun random sayı üretiyor.
     int range(int secim){
         if(secim == 1){
             min = 1;
@@ -30,6 +33,7 @@ public class GameConfig {
         return 0;
     }
     
+    //Kullanıcının maksimum hak sayısını girdiği metot
     void maxAttempts(){
         System.out.println("Please enter the maximum number of attempts ");
         maxAttempts = sc.nextInt(); 
